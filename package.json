@@ -1,0 +1,16 @@
+{
+  "name": "pyodide-string-corruption-repro",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "reproduction.js",
+  "scripts": {
+    "start": "node --experimental-wasm-stack-switching reproduction.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "pyodide": "^0.29.3"
+  }
+}
