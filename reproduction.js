@@ -1,6 +1,5 @@
 import { loadPyodide } from "pyodide";
-import "pyodide/pyodide.asm.js";
-import { readFile } from "fs/promises";
+import { readFileSync } from "fs";
 
 function inspectStr(s) {
     let nulCount = 0;
@@ -20,5 +19,5 @@ const pyodide = await loadPyodide({
   },
 });
 
-const file = await readFile("./reproduction.py", { encoding: "utf8" });
-await pyodide.runPythonAsync(file);
+const file = readFileSync("./reproduction.py", { encoding: "utf8" });
+pyodide.runPython(file);
